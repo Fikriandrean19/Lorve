@@ -2,7 +2,7 @@ export default function Terms() {
   return (
     <main className="bg-white">
       <section className="max-w-3xl mx-auto px-6 py-16">
-        <p className="text-sm text-gray-500 text-center">
+        <p className="text-sm mt-10 text-gray-500 text-center">
           Current as of 20 Jan 2022
         </p>
 

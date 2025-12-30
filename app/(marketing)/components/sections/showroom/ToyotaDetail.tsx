@@ -29,7 +29,7 @@ export default function ToyotaDetail () {
   const [activeImage, setActiveImage] = useState(images[0])
 
       return (
-        <section className="min-h-[calc(100vh-80px)] px-10 py-10">
+        <section className="min-h-[calc(100vh-80px)] px-4 py-6 md:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="hidden md:block lg:sticky lg:top-24 self-start">
               <div className="h-90 border rounded-2xl p-6 flex items-center justify-center mb-4">
@@ -108,9 +108,10 @@ export default function ToyotaDetail () {
                   </AccordionTrigger>
     
                   <AccordionContent className="pt-2 pb-0">
-                    <div className="grid grid-cols-4 gap-3 ">
+                    <div className="flex gap-2 overflow-x-auto pb-2
+                      md:grid md:grid-cols-4 md:overflow-visible">
     
-                      <Card className=" w-full h-28 rounded-2xl border p-4 gap-4">
+                      <Card className=" min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
                         <SlPeople size={20} className="text-[#9C5A3C]" />
                         <div className="flex flex-col gap-1">
                         <p className="text-sm font-semibold">Capacity</p>
@@ -118,7 +119,7 @@ export default function ToyotaDetail () {
                         </div>
                       </Card>
     
-                      <Card className=" w-full h-28 rounded-2xl border p-4 gap-4">
+                      <Card className=" min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
                         <PiGearFineBold size={20} className="text-[#9C5A3C]" />
                         <div className="flex flex-col gap-1">
                         <p className="text-sm font-semibold">Transmision</p>
@@ -126,7 +127,7 @@ export default function ToyotaDetail () {
                         </div>
                       </Card>
     
-                      <Card className=" w-full h-28 rounded-2xl border p-4 gap-4">
+                      <Card className=" min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
                         <PiGearFineBold size={20} className="text-[#9C5A3C]" />
                         <div className="flex flex-col gap-1">
                         <p className="text-sm font-semibold">Transmission</p>
@@ -134,7 +135,7 @@ export default function ToyotaDetail () {
                         </div>
                       </Card>
     
-                      <Card className=" w-full h-28 rounded-2xl border p-4 gap-4  ">
+                      <Card className=" min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
                         <PiGearFineBold size={20} className="text-[#9C5A3C]" />
                         <div className="flex flex-col gap-1">
                         <p className="text-sm font-semibold">Transmision</p>

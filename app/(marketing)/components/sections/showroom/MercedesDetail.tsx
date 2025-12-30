@@ -106,46 +106,46 @@ export default function MercedesDetail() {
                 </span>
               </AccordionTrigger>
 
-<AccordionContent className="pt-2 pb-0">
-  <div
-    className="
-      flex gap-3 overflow-x-auto pb-2
-      md:grid md:grid-cols-4 md:overflow-visible
-    "
-  >
-    <Card className="min-w-[200px] h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-      <SlPeople size={20} className="text-[#9C5A3C]" />
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-semibold">Capacity</p>
-        <p className="text-sm text-gray-500">5 Passengers</p>
-      </div>
-    </Card>
+            <AccordionContent className="pt-2 pb-0">
+              <div
+                className="
+                  flex gap-3 overflow-x-auto pb-2
+                  md:grid md:grid-cols-4 md:overflow-visible
+                "
+              >
+                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
+                  <SlPeople size={20} className="text-[#9C5A3C]" />
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm font-semibold">Capacity</p>
+                    <p className="text-sm text-gray-500">5 Passengers</p>
+                  </div>
+                </Card>
 
-    <Card className="min-w-[200px] h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-      <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-semibold">Transmission</p>
-        <p className="text-sm text-gray-500">Leather Seats</p>
-      </div>
-    </Card>
+                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
+                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm font-semibold">Transmission</p>
+                    <p className="text-sm text-gray-500">Leather Seats</p>
+                  </div>
+                </Card>
 
-    <Card className="min-w-[200px] h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-      <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-semibold">Transmission</p>
-        <p className="text-sm text-gray-500">Automatic</p>
-      </div>
-    </Card>
+                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
+                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm font-semibold">Transmission</p>
+                    <p className="text-sm text-gray-500">Automatic</p>
+                  </div>
+                </Card>
 
-    <Card className="min-w-[200px] h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-      <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-semibold">Fuel</p>
-        <p className="text-sm text-gray-500">Diesel</p>
-      </div>
-    </Card>
-  </div>
-</AccordionContent>
+                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
+                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
+                  <div className="flex flex-col gap-1">
+                    <p className="text-sm font-semibold">Fuel</p>
+                    <p className="text-sm text-gray-500">Diesel</p>
+                  </div>
+                </Card>
+              </div>
+            </AccordionContent>
 
             </AccordionItem>
 
