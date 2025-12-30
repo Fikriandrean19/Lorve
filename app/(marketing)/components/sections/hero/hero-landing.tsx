@@ -4,22 +4,30 @@ export default function HeroLanding() {
 
             <div className="absolute inset-0 bg-cover bg-center"
                 style={{backgroundImage: "url('assets/hero/hero-bg.png')"}} />
+
                 <div className="absolute inset-0 bg-black/60" />
 
                 <div className="relative z-10 flex h-full items-end">
-                    <div className="mx-auto flex w-full max-w-7xl gap-12 px-6 md:gap-32 md:pb-32">
+                    <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-6 pb-24 md:flex-row md:gap-32 md:pb-32 ">
 
-                        <div className="flex-1 text-center md:text-left">
-                        <h1 className="mb-8 text-5xl font-semibold leading-tight md:text-7xl">
+                        <div className="flex-1 text-left">
+                        <h1 className="mb-6 font-semibold font-[quicksand] leading-tight text-4xl md:text-7xl">
+                            <span className="hidden md:block">
                             For Those Who 
                             <br />
                             Arrive, Not Just
                             <br />
                             Come
+                            </span>
+                            <span className="md:hidden block">
+                                For those Who<br />
+                                Arrive, Not Just <br />
+                                come
+                            </span>
                         </h1>
                         </div>
 
-                        <div className="flex max-w-md flex-col items-center gap-6 text-center md:items-start md:text-start">
+                        <div className="flex max-w-md flex-col items-start gap-6 text-left md:items-start md:text-left font-[quicksand]">
                             <div className="flex gap-6 text-sm uppercase tracking-wide text-white/80">
                             <span>Presence</span>
                             <span>Power</span>
@@ -30,7 +38,7 @@ export default function HeroLanding() {
                             An experience crafted for those who command presence,
                             where every mile speaks elegance.
                         </p>
-                        <button className="mt-4 w-fit rounded-full bg-white text-black py-3 px-6 text-sm font-medium hover:bg-white/90 transition">
+                        <button className="mt-4 w-fit rounded-full bg-white text-black py-3 px-8 text-sm font-medium hover:bg-white/90 transition font-[archivo]">
                             Explore Our Fleet
                         </button>
                         </div>

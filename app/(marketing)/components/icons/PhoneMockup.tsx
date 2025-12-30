@@ -4,7 +4,7 @@ type PhoneMockupProps = {
 
 export function PhoneMockup({ children }: PhoneMockupProps) {
   return (
-    <div className="relative w-[320px] h-[640px]">
+    <div className="relative w-[320px] h-160">
       <svg
         viewBox="0 0 320 640"
         width="320"
@@ -52,7 +52,7 @@ export function PhoneMockup({ children }: PhoneMockupProps) {
         <circle cx="160" cy="38" r="4" fill="#666666" />
       </svg>
 
-      <div className="absolute inset-[14px] rounded-[38px] overflow-hidden bg-white">
+      <div className="absolute inset-3.5 rounded-[38px] overflow-hidden bg-white">
         {children}
       </div>
     </div>

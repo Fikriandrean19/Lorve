@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const cars = [
   {
@@ -40,46 +41,47 @@ export default function CarShowcase() {
   };
 
   return (
-    <section className="w-full bg-white overflow-hidden">
+    <section className="w-ful overflow-hidden">
 
-      <div className="max-w-6xl mx-auto text-center pt-24 px-6">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-          A Symphony of
-          <br />
-          <span className="font-bold">Power & Elegance</span>
-        </h1>
+        <div className="relative z-20 bg-white pt-26 pb-30 text-center">
+          <h1 className="text-5xl font-semibold font-[quicksand]">
+            
+            <span className="hidden md:block">
+            A Symphony of<br />Power & Elegance
+            </span>
+          <span className=" block md:hidden text-4xl">
+            A Symphony of power <br /> & Elegance
+          </span>
+          </h1>
 
-        <p className="mt-6 text-gray-500 max-w-2xl mx-auto">
-          each vehicle embodies craftsmanship, comfort, and class beyond expectation
-        </p>
+          <p className="mt-6 text-gray-500">
+            each vehicle embodies craftsmanship, comfort, and class beyond expectation
+          </p>
+          <Link href="/home/detail">
+          <button className="mt-8 text-orange-500 hover:text-[#9c6332] cursor-pointer transition duration-100">
+            See all models
+          </button>
+          </Link>
+        </div>
 
-        <button className="mt-8 text-[#C2824D] font-medium hover:underline">
-          See all models
-        </button>
-      </div>
 
 
       <div
-        className="relative mt-20 h-[820px] w-full bg-center bg-cover transition-all duration-700"
-        style={{
-          backgroundImage: `url('${cars[current].image}')`,
-        }}
-      >
+        className="relative h-150 overflow-hidden transition-all duration-700">
+          <img src={cars[current].image} className="absolute inset-0 w-full h-full object-cover"/>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-
+              <div className="absolute inset-0 backdrop-blur-x" />
+              <div className="absolute inset-0 bg-linear-to-b from-white via-transparent to-transparent"/>
 
         <div className="absolute inset-0 flex flex-col justify-end">
           <div className="max-w-6xl mx-auto w-full px-6 pb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-10 text-white">
             
-
-            <div className="flex flex-col gap-6">
-              <h2 className="text-3xl font-normal leading-snug">
+            <div className="flex flex-col gap-0 max-w-md">
+              <h1 className="text-5xl font-semibold leading-snug">
                 {cars[current].brand}
                 <br />
                 {cars[current].model}
-              </h2>
+              </h1>
 
               <div className="flex items-center gap-4">
                 <button
@@ -108,9 +110,11 @@ export default function CarShowcase() {
                   Book Now
                 </button>
 
+                <Link href= "/">
                 <button className="text-[#C2824D] font-medium hover:underline">
                   View Details
                 </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -36,7 +36,7 @@ export default function FaQ() {
         <section className="w-full bg-white py-28">
       <div className="max-w-6xl mx-auto px-6">
         
-        <h2 className="text-center text-4xl md:text-5xl font-semibold tracking-tight">
+        <h2 className="text-center text-4xl md:text-5xl font-semibold tracking-tight font-[quicksand]">
           Frequently Ask Question
         </h2>
 
