@@ -35,38 +35,41 @@ export default function HeroLanding() {
           <div className="flex max-w-md flex-col items-start gap-6 text-left md:items-start md:text-left font-[quicksand]">
 
             <div className="flex gap-6 text-sm uppercase tracking-wide text-white/80">
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-2 font-bold">
                 <Image
                   src="/assets/hero/iconBaru.png"
                   alt="Presence"
                   width={16}
                   height={16}
+                  className="invert brightness-200"
                 />
                 Presence
               </span>
 
-              <span className="flex items-center gap-2">
+              <span className="flex items-center font-bold gap-2">
                 <Image
                   src="/assets/hero/iconBaru.png"
                   alt="Power"
                   width={16}
                   height={16}
+                  className="invert brightness-200"
                 />
                 Power
               </span>
 
-              <span className="flex items-center gap-2">
+              <span className="flex items-center font-bold gap-2">
                 <Image
                   src="/assets/hero/iconBaru.png"
                   alt="Perfection"
                   width={16}
                   height={16}
+                  className="invert brightness-200"
                 />
                 Perfection
               </span>
             </div>
 
-            <p className="text-white/80">
+            <p className="text-white/80 font-bold">
               An experience crafted for those who command presence,
               where every mile speaks elegance.
             </p>
