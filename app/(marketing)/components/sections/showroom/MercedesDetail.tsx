@@ -18,31 +18,32 @@ import {
 import { Card } from "@/components/ui/card"
 
 const images = [
-  "/assets/mercedes/mercedes.png",
-  "/assets/mercedes/mercedes1.png",
-  "/assets/mercedes/mercedes2.png",
-  "/assets/mercedes/mercedes3.png",
+  "/assets/mercedes/05.png",
+  "/assets/mercedes/06.png",
+  "/assets/mercedes/09.png",
+  "/assets/mercedes/11.png",
 ]
 
 export default function MercedesDetail() {
   const [activeImage, setActiveImage] = useState(images[0])
 
   return (
-    <section className="min-h-[calc(100vh-80px)] px-4 py-6 md:px-8 lg:px-10">
+    <section className="min-h-[calc(100vh-80px)] px-2 py-6 md:px-8 lg:px-10">
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div className="hidden md:block lg:sticky lg:top-24 self-start">
-          <div className="h-90 border rounded-2xl p-6 flex items-center justify-center mb-4">
+          <div className="relative border rounded-2xl p-4">
+            <div className="relative flex items-center justify-center">
             <Image
               src={activeImage}
               alt="Mercedes Benz"
               width={400}
               height={260}
               className="object-contain"
-              priority
             />
+            </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-3">
+          <div className="mt-4 grid grid-cols-4 gap-3">
             {images.map((img) => (
               <button
                 key={img}
@@ -54,13 +55,13 @@ export default function MercedesDetail() {
                       : "border-gray-200"
                   }
                 `}
-              >
+              > 
                 <Image
                   src={img}
                   alt="thumbnail"
                   width={100}
                   height={80}
-                  className="object-contain"
+                  className="object-cover p-2"
                 />
               </button>
             ))}
@@ -68,19 +69,19 @@ export default function MercedesDetail() {
         </div>
 
         <div className="flex flex-col justify-start">
-          <p className="text-sm text-gray-500 mb-2">Luxury Vans</p>
+          <p className="text-sm mb-2">Luxury Vans</p>
 
           <h1 className="text-3xl font-semibold font-[quicksand] mb-4">
             Mercedes Benz Sprinter
           </h1>
 
-          <p className="text-gray-600 mb-4">
+          <p className=" mb-5 text-base">
             Experience ultimate luxury and comfort with advanced technology and superior performance.
           </p>
 
-          <p className="text-gray-600 mb-4">
+          <p className="text-base mb-4 font-[inter]">
             Start From{" "}
-            <span className="text-2xl font-semibold text-[#9C5A3C]">
+            <span className="text-2xl font-semibold text-black md:text-[#9C5A3C]">
               15 Juta
             </span>
           </p>
@@ -109,7 +110,7 @@ export default function MercedesDetail() {
             <AccordionContent className="pt-2 pb-0">
               <div
                 className="
-                  flex gap-3 overflow-x-auto pb-2
+                  flex gap-2 overflow-x-auto pb-2
                   md:grid md:grid-cols-4 md:overflow-visible
                 "
               >
@@ -216,7 +217,7 @@ export default function MercedesDetail() {
                     <SlPeople size={20} className="text-[#9C5A3C]" />
                     <div className="flex flex-col gap-1">
                     <p className="text-sm font-semibold">Capacity</p>
-                    <p className="text-xs text-gray-500">5 Passengers</p>
+                    <p className="text-sm text-gray-500">5 Passengers</p>
                     </div>
                   </Card>
 
@@ -224,7 +225,7 @@ export default function MercedesDetail() {
                     <PiGearFineBold size={20} className="text-[#9C5A3C]" />
                     <div className="flex flex-col gap-1">
                     <p className="text-sm font-semibold">Transmision</p>
-                    <p className="text-xs text-gray-500">Leather Seats</p>
+                    <p className="text-sm text-gray-500">Leather Seats</p>
                     </div>
                   </Card>
                 </div>
@@ -236,7 +237,7 @@ export default function MercedesDetail() {
                 <AccordionTrigger
                 className="group py-2 flex justify-between items-center text-base font-medium hover:no-underline [&>svg]:hidden">
 
-                <span className="font-semibold text-lg">Included in The Price</span>
+                <span className="font-semibold text-xl">Included in The Price</span>
                 <span>
                     <Plus className="h-4 w-4 group-data-[state=open]:hidden rounded-full border border-[#C2824D] text-[#C2824D]" />
                     <Minus className="h-4 w-4 hidden group-data-[state=open]:block border rounded-full border-[#C2824D] text-[#C2824D]" />
@@ -244,9 +245,9 @@ export default function MercedesDetail() {
                 </AccordionTrigger>
                 <AccordionContent className="pt-2 pb-0">
                     <div className="">
-                        <li>Climate Control</li>
-                        <li>GPS Navigation</li>
-                        <li>Bluetooth</li>
+                        <p className="pb-2">Climate Control</p>
+                        <p className="pb-2">GPS Navigation</p>
+                        <p className="pb-2">Bluetooth</p>
                     </div>
 
                 </AccordionContent>
@@ -276,27 +277,27 @@ export default function MercedesDetail() {
                     </div>
 
                     <div className="flex flex-row gap-4">
-                    <RxCross2 className="mt-1"/>
+                    <RxCross2 className="mt-1 text-lg"/>
                     <span className="">Smoke or vape inside the vehicle</span>
                     </div>
 
                     <div className="flex flex-row gap-4">
-                    <RxCross2 className="mt-1"/>
+                    <RxCross2 className="mt-1 text-lg"/>
                     <span className="">Consume alcohol or bring prohibited items</span>
                     </div>
 
                     <div className="flex flex-row gap-4">
-                    <RxCross2 className="mt-1"/>
+                    <RxCross2 className="mt-1 text-lg"/>
                     <span className="">Bring pets without prior notice</span>
                     </div>
 
                     <div className="flex flex-row gap-4">
-                    <RxCross2 className="mt-1"/>
+                    <RxCross2 className="mt-1 text-lg"/>
                     <span className="">Modify seats layouts or open restricted panels</span>
                     </div>
 
                     <div className="flex flex-row gap-4">
-                    <RxCross2 className="mt-1"/>
+                    <RxCross2 className="mt-1 text-lg"/>
                     <span className="">Engage in unsafe or unlawful activities</span>
                     </div>
 
@@ -306,7 +307,9 @@ export default function MercedesDetail() {
 
           </Accordion>
           <div className="flex flex-row justify-end">
-          <button className="mt-10 w-sm rounded-full bg-[#C2824D] py-4 text-white font-semibold transition hover:bg-[#B1723A]">Book Now</button>
+          <button className="mt-10 w-sm rounded-full bg-[#C2824D]
+           py-4 text-white font-semibold 
+           transition hover:bg-[#B1723A] cursor-pointer">Book Now</button>
           </div>
         </div>
       </div>

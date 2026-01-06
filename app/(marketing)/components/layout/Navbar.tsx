@@ -7,6 +7,8 @@ import { usePathname } from "next/navigation"
 import clsx from "clsx"
 import { HiOutlineMenu, HiX } from "react-icons/hi"
 import Image from "next/image"
+import { AppStoreBadge } from "../icons/AppstoreBadges"
+import { GooglePlayBadge } from "../icons/GooglePlayBadges"
 
 const menu = [
   { label: "Home", href: "/" },
@@ -19,8 +21,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
 
   const pathname = usePathname()
-  const isHome = pathname === "/"
-  const isTransparent = isHome && !scrolled
+  const TransparentRoute = new Set ( ["/", "/home/detail"])
+  const isTransparentRoute = TransparentRoute.has(pathname)
+  const isTransparent = isTransparentRoute && !scrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +59,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-12">
             {menu.map((item) => (
               <Link
                 key={item.href}
@@ -87,15 +90,27 @@ export default function Navbar() {
       </header>
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white md:hidden">
+        <div className="fixed inset-0 z-60 bg-white md:hidden">
+          <div className="border-b h-20  ">
+            <Link href="/" className="flex items-center p-4">
+            <Image
+              src="/assets/hero/logoBaru.png"
+              alt="LORVE Logo"
+              width={60}
+              height={20}
+              priority
+            />
+          </Link>
+
           <button
-            className="absolute top-5 right-5 text-2xl"
+            className="absolute top-8 right-5 text-4xl"
             onClick={() => setMobileMenuOpen(false)}
           >
             <HiX />
           </button>
+          </div>
 
-          <nav className="flex h-full flex-col items-center justify-center gap-8 text-lg font-medium">
+          <nav className="flex h-full p-2 mt-8 flex-col gap-12 text-xl font-medium">
             {menu.map((item) => (
               <Link
                 key={item.href}
@@ -104,13 +119,24 @@ export default function Navbar() {
               >
                 {item.label}
               </Link>
+              
             ))}
           </nav>
 
-          <div className="fixed bottom-0 left-0 w-full px-4 pb-6">
-            <Button className="w-full rounded-full bg-[#C2824D] py-5 text-white font-semibold hover:bg-[#B1723A]">
+          <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 ">
+            <Button className="bg-[#C2824D] py-5 px-20 text-white font-semibold hover:bg-[#B1723A]">
               Get the App
             </Button>
+
+            <div className="flex flex-cols-2 gap-2">
+            <span className="p-4">
+            <AppStoreBadge />
+            </span>
+            <span className="p-4">
+            <GooglePlayBadge />
+            </span>
+            </div>
+
           </div>
         </div>
       )}

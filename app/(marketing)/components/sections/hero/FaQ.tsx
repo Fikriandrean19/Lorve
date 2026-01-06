@@ -33,16 +33,15 @@ const faqs = [
 
 export default function FaQ() {
     return (
-        <section className="w-full bg-white py-28">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="w-full  bg-white py-28">
+      <div className="max-w-7xl mx-auto px-6">
         
         <h2 className="text-center text-4xl md:text-5xl font-semibold tracking-tight font-[quicksand]">
           Frequently Ask Question
         </h2>
 
         <Accordion
-          type="single"
-          collapsible
+          type="multiple"
           className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-8"
         >
           {faqs.map((item, i) => (

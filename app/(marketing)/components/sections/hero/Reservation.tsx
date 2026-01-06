@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AppStoreBadge } from "@/app/(marketing)/components/icons/AppstoreBadges"
 import { GooglePlayBadge } from "@/app/(marketing)/components/icons/GooglePlayBadges"
@@ -24,28 +25,28 @@ export default function ReservationSection() {
           variant="outline"
           className="mt-6 h-12 px-6 rounded-full gap-2 border-gray-300 bg-white hover:bg-gray-100"
         >
-          <CalendarDays className="w-4 h-4 " />
+          <Image
+          src="/assets/icon/calendar Solid.svg"
+          alt="Calendar"
+          width={20}
+          height={20}
+          className=""
+         />
           Check Schedule
         </Button>
 
-        <div className="relative mt-6 h-105 w-full overflow-hidden flex justify-center">
-        <div className="absolute -bottom-55">
-            <PhoneMockup>
-            <div className="h-full flex flex-col items-center justify-center text-center px-6">
-                <h3 className="text-lg font-semibold">Reserve Your Car</h3>
-                <p className="mt-2 text-sm text-gray-500">
-                Pick a date, time, and model in seconds.
-                </p>
-
-                <button className="mt-6 bg-black text-white px-4 py-2 rounded-full text-sm">
-                Get Started
-                </button>
-            </div>
-            </PhoneMockup>
+        <div className="relative mt-6 h-100 md:h-130 w-full overflow-hidden flex justify-center">
+        <div className="absolute p-6">
+          <Image 
+          width={400}
+          height={700}
+          src="/assets/reservation/Iphone UI.png"
+          alt="Phone"
+          />
         </div>
         </div>
 
-        <div className="mt-10 flex gap-8" >
+        <div className="mt-8 flex gap-5" >
         <AppStoreBadge />
           <GooglePlayBadge />
         </div>  

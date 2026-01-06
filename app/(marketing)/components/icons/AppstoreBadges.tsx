@@ -1,8 +1,8 @@
 export function AppStoreBadge() {
   return (
     <svg
-      width="135"
-      height="40"
+      width="145"
+      height="50"
       viewBox="0 0 135 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

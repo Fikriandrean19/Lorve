@@ -14,39 +14,62 @@ export default function CarCard({
   price,
   href,
 }: CarCardProps) {
+  
   return (
-    <div className="w-full max-w-sm rounded-2xl border border-accent bg-[#FAFAFA] p-4 sm:p-6">
-
-      <div className="relative rounded-xl border border-accent bg-white/90 p-4">
-        <span className="absolute left-4 top-4 rounded-full border bg-white/80 px-3 py-1 text-xs shadow">
+    <div className="rounded-xl border bg-white md:bg-[#fafafa] p-5">
+      <div className="relative bg-white md:bg-[#fafafa] md:rounded-2xl md:border">
+        <span className="absolute md:top-4 left-4 z-10 rounded-full border bg-[#fafafa] px-4 py-2 text-xs">
           Luxury Vans
         </span>
 
-        <Image
-          src={image}
-          alt={brand}
-          width={400}
-          height={240}
-          className="mx-auto h-40 w-full object-contain sm:h-48"
-        />
+        <div className="relative min-h-85 md:min-h-95 overflow-hidden bg-[#fafafa] rounded-2xl">
+          <Image
+            src={image}
+            alt={brand}
+            fill
+            className="object-cover block"
+            priority
+          />
 
-        <div className="mt-3 flex flex-wrap gap-2 text-xs text-gray-600">
-          <span className="rounded-full bg-gray-100 px-3 py-1">6 Seats</span>
-          <span className="rounded-full bg-gray-100 px-3 py-1">5 People</span>
-          <span className="rounded-full bg-gray-100 px-3 py-1">4 Suitcase</span>
+          <div className="absolute bottom-3 left-4 right-4 hidden md:flex gap-2 text-sm text-black">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-white  px-1">
+              <img src="/assets/card/seat.png" className="h-6 w-6" alt="seat" />
+              6 Seats
+            </span>
+
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-white px-4">
+              <img src="/assets/card/people.png" className="h-5 w-5" alt="people" />
+              5 People
+            </span>
+
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent bg-white px-4">
+              <img src="/assets/card/suitcase.png" className="h-6 w-6" alt="suitcase" />
+              4 Suitcase
+            </span>
+          </div>
+        </div>
+
+        <div className="md:hidden flex-col mt-4 px-2">
+          <h3 className="text-base font-semibold">{brand}</h3>
+          <p className="mt-6 text-sm text-black">Start from</p>
+          <div className="flex items-center justify-between">
+            <p className="font-semibold text-[#c2824d]">{price}</p>
+            <Link href={href}>
+              <button className="rounded-full bg-[#c2824d] px-6 py-2 text-sm font-medium text-white cursor-pointer">
+                View Details
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
-      <div className="mt-4 space-y-2">
-        <h3 className="text-base font-semibold sm:text-lg">{brand}</h3>
-
-        <p className="text-xs text-gray-500 sm:text-sm">Start from</p>
-
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-semibold text-[#C2824D]">{price}</p>
-
-          <Link href={href} className="w-auto sm:w-auto">
-            <button className="w-26 rounded-full bg-[#C2824D] py-2 text-sm font-medium text-white transition hover:opacity-90">
+      <div className="hidden md:flex flex-col p-4 px-2">
+        <h3 className="text-base font-semibold">{brand}</h3>
+        <p className="mt-6 text-sm text-black">Start from</p>
+        <div className="flex items-center justify-between">
+          <p className="font-semibold text-[#c2824d]">{price}</p>
+          <Link href={href}>
+            <button className="rounded-full bg-[#c2824d] px-6 py-2 text-sm font-medium text-white cursor-pointer">
               View Details
             </button>
           </Link>

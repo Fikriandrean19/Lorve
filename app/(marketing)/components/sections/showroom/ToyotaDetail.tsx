@@ -18,10 +18,10 @@ import {
 import { Card } from "@/components/ui/card"
 
 const images = [
-  "/assets/toyota/toyota.png",
-  "/assets/toyota/toyota1.png",
-  "/assets/toyota/toyota2.png",
-  "/assets/toyota/toyota3.png",
+  "/assets/toyota/05.png",
+  "/assets/toyota/06.png",
+  "/assets/toyota/09.png",
+  "/assets/toyota/11.png",
 ]
 
 export default function ToyotaDetail () {
@@ -29,26 +29,28 @@ export default function ToyotaDetail () {
   const [activeImage, setActiveImage] = useState(images[0])
 
       return (
-        <section className="min-h-[calc(100vh-80px)] px-4 py-6 md:px-8 lg:px-10">
+        <section className="min-h-[calc(100vh-80px)] px-2 py-6 md:px-8 lg:px-10">
           <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div className="hidden md:block lg:sticky lg:top-24 self-start">
-              <div className="h-90 border rounded-2xl p-6 flex items-center justify-center mb-4">
+              <div className="relative border rounded-2xl p-4">
+              <div className="relative flex items-center justify-center">
                 <Image
                   src={activeImage}
                   alt="Toyota Hiace"
                   width={400}
                   height={260}
                   className="object-contain"
-                  priority
                 />
               </div>
+              </div>
     
-              <div className="grid grid-cols-4 gap-3">
+              <div className="mt-4 grid grid-cols-4 gap-3">
                 {images.map((img) => (
                   <button
                     key={img}
                     onClick={() => setActiveImage(img)}
-                    className={`border rounded-xl p-2 flex items-center justify-center transition
+                    className={`
+                      border rounded-xl p-2 flex items-center justify-center transition
                       ${
                         activeImage === img
                           ? "border-[#9C5A3C]"
@@ -61,7 +63,7 @@ export default function ToyotaDetail () {
                       alt="thumbnail"
                       width={100}
                       height={80}
-                      className="object-contain"
+                      className="object-cover p-2"
                     />
                   </button>
                 ))}
@@ -69,7 +71,7 @@ export default function ToyotaDetail () {
             </div>
     
             <div className="flex flex-col justify-start">
-              <p className="text-sm text-gray-500 mb-2">Luxury Vans</p>
+              <p className="text-sm mb-2">Luxury Vans</p>
     
               <h1 className="text-3xl font-semibold font-[quicksand] mb-4">
                 Toyota Hiace premio
@@ -79,9 +81,9 @@ export default function ToyotaDetail () {
                 Experience ultimate luxury and comfort with advanced technology and superior performance.
               </p>
     
-              <p className="text-gray-600 mb-4">
+              <p className="text-black mb-4">
                 Start From{" "}
-                <span className="text-2xl font-semibold text-[#9C5A3C]">
+                <span className="text-2xl font-semibold md:text-[#9C5A3C]">
                   8 Juta
                 </span>
               </p>
