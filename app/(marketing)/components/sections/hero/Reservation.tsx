@@ -25,7 +25,7 @@ export default function ReservationSection() {
           variant="outline"
           className="mt-6 h-12 px-6 rounded-full gap-2 border-gray-300 bg-white hover:bg-gray-100"
         >
-          <Image
+          <img
           src="/assets/icon/calendar Solid.svg"
           alt="Calendar"
           width={20}

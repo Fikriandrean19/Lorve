@@ -109,7 +109,7 @@ export default function CarShowcase() {
               <div className="flex items-center gap-4">
                 <button
                   onClick={prevSlide}
-                  className="hidden w-12 h-12 rounded-full border border-white/40 shadow-[0_8px_20px_rgba(0,0,0,0.35)] md:flex items-center justify-center text-white hover:bg-white/20 transition backdrop-blur-sm"
+                  className="hidden w-12 h-12 rounded-full border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.37)] md:flex items-center justify-center text-white hover:bg-white/20 transition backdrop-blur-sm"
                 >
                   <BsArrowLeft />
                 </button>
@@ -142,7 +142,9 @@ export default function CarShowcase() {
               <div className="flex md:hidden items-center gap-4">
                 <button
                   onClick={prevSlide}
-                  className="w-12 h-12 rounded-full border border-white/40 shadow-[0_8px_20px_rgba(0,0,0,0.35)] flex items-center justify-center text-white hover:bg-white/20 transition-all backdrop-blur-sm"
+                  className="w-12 h-12 rounded-full border 
+                  border-white/40 shadow-[0_8px_20px_rgba(0,0,0,0.35)] 
+                  flex items-center justify-center text-white hover:bg-white/20 transition-all backdrop-blur-sm"
                 >
                   <BsArrowLeft />
                 </button>
