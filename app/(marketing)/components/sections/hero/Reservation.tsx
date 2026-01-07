@@ -26,11 +26,10 @@ export default function ReservationSection() {
           className="mt-6 h-12 px-6 rounded-full gap-2 border-gray-300 bg-white hover:bg-gray-100"
         >
           <img
-          src="/assets/icon/calendar Solid.svg"
+          src="/assets/icon/calendarSolid.svg"
           alt="Calendar"
           width={20}
           height={20}
-          className=""
          />
           Check Schedule
         </Button>
