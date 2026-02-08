@@ -10,7 +10,7 @@ import Image from "next/image"
 import { AppStoreBadge } from "../icons/AppstoreBadges"
 import { GooglePlayBadge } from "../icons/GooglePlayBadges"
 import {cars} from "@/app/(marketing)/data/cars"
-
+import { getCars } from "@/app/(marketing)/services/car.service"
 // const menu = [
 //   { label: "Home", href: "/" },
 //   { label: "Mercedes-Benz", href: "/home/mercedes" },
@@ -21,10 +21,18 @@ const staticMenu = [
   { label: "Home", href: "/" },
 ]
 
-const carMenu = Object.values(cars).map((car) => ({
-  label: car.brand,
-  href: `/home/${car.slug}`,
-}))
+let carMenu: any = [];
+
+try {
+  const cars = (await getCars()).data;
+    carMenu = cars.map((car: any) => ({
+      label: car?.name,
+      href: `/home/${car?.id}`,
+    }))
+
+} catch (error) {
+  console.error("generateStaticParams fallback:", error);
+}
 
 const menu = [...staticMenu, ...carMenu]
 
