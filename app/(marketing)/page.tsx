@@ -16,7 +16,7 @@ export default function HomePage() {
     <CarShowcase />
     <Reservation />
     <FaQ />
-    <div style={{ height: '100vh' }}>
+     <div style={{ height: '100vh' }}>
       <Panorama />
     </div>
     </>

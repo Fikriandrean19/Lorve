@@ -1,12 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
 
+
 type CarCardProps = {
   brand: string
   image: string
   price: string
   href: string
 }
+
+
 
 export default function CarCard({
   brand,
@@ -15,6 +18,7 @@ export default function CarCard({
   href,
 }: CarCardProps) {
   
+
   return (
     <div className="rounded-xl border bg-white md:bg-[#fafafa] p-5">
       <div className="relative bg-white md:bg-[#fafafa] md:rounded-2xl md:border">
