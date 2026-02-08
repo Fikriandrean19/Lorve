@@ -3,8 +3,6 @@ import CarGallery from "@/app/(marketing)/components/sections/showroom/CarGaller
 import { cars } from "../../data/cars";
 import CarDetail from "../../components/sections/showroom/CarDetail";
 
-
-
 export default function Page() {
     const car = cars.mercedes;
     return (

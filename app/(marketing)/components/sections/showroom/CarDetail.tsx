@@ -23,14 +23,15 @@ interface CarDetailProps {
     description: string
     price: string
     rating: number
-    images: string[]
+    images: string[],
+    car_specifications: any[],
     car_brand?: string
     car_type?: string
   }
 }
 
 export default function CarDetail({ car }: CarDetailProps) {
-  const activeImage = car.images?.[0]
+  const [activeImage, setActiveImage] = useState(car.images?.[0])
 
   return (
     <section className="min-h-[calc(100vh-80px)] px-4 py-8">
@@ -50,15 +51,25 @@ export default function CarDetail({ car }: CarDetailProps) {
 
           <div className="mt-4 grid grid-cols-4 gap-3">
             {car.images.map((img) => (
-              <div key={img} className="border rounded-xl p-2">
+              <button
+                key={img}
+                onClick={() => setActiveImage(img)}
+                className={`border rounded-xl p-2 flex items-center justify-center transition
+                  ${
+                    activeImage === img
+                      ? "border-[#9C5A3C]"
+                      : "border-gray-200"
+                  }
+                `}
+              > 
                 <Image
                   src={img}
                   alt="thumbnail"
                   width={100}
                   height={80}
-                  className="object-cover"
+                  className="object-cover p-2"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -73,7 +84,7 @@ export default function CarDetail({ car }: CarDetailProps) {
           <p className="text-lg mb-4">
             Start From{" "}
             <span className="text-2xl font-semibold text-[#9C5A3C]">
-              {Number(car.price).toLocaleString("id-ID")}
+              {(Number(car.price) ? Number(car.price).toLocaleString("id-ID") : '8.000.000')}
             </span>
           </p>
 
@@ -105,37 +116,15 @@ export default function CarDetail({ car }: CarDetailProps) {
                   md:grid md:grid-cols-4 md:overflow-visible
                 "
               >
-                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-                  <SlPeople size={20} className="text-[#9C5A3C]" />
-                  <div className="flex flex-col gap-1">
-                    <p className="text-sm font-semibold">Capacity</p>
-                    <p className="text-sm text-gray-500">5 Passengers</p>
-                  </div>
-                </Card>
-
-                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-                  <div className="flex flex-col gap-1">
-                    <p className="text-sm font-semibold">Transmission</p>
-                    <p className="text-sm text-gray-500">Leather Seats</p>
-                  </div>
-                </Card>
-
-                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-                  <div className="flex flex-col gap-1">
-                    <p className="text-sm font-semibold">Transmission</p>
-                    <p className="text-sm text-gray-500">Automatic</p>
-                  </div>
-                </Card>
-
-                <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0">
-                  <PiGearFineBold size={20} className="text-[#9C5A3C]" />
-                  <div className="flex flex-col gap-1">
-                    <p className="text-sm font-semibold">Fuel</p>
-                    <p className="text-sm text-gray-500">Diesel</p>
-                  </div>
-                </Card>
+                {car.car_specifications.map((spesificati, key) => (
+                  <Card className="min-w-50 h-28 rounded-2xl border p-4 gap-4 md:min-w-0" key={spesificati.id}>
+                    <SlPeople size={20} className="text-[#9C5A3C]" />
+                    <div className="flex flex-col gap-1">
+                      <p className="text-sm font-semibold">{spesificati.specification}</p>
+                      <p className="text-sm text-gray-500">{spesificati.value}</p>
+                    </div>
+                  </Card>
+                ))}
               </div>
             </AccordionContent>
 

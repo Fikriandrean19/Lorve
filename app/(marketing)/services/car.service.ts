@@ -1,14 +1,11 @@
-export async function getCarDetail(carId: string) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/car/${carId}`,
-    {
-      cache: "no-store", 
-    }
-  )
+import httpService from '../../../client'
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch car")
-  }
+const resourcePath = `${process.env.NEXT_PUBLIC_API_URL}`
 
-  return res.json()
+export const getCars = () => {
+    return httpService.get(resourcePath + '/cars')
+}
+
+export const getCarDetail = (id: any) => {
+    return httpService.get(resourcePath + `/car/${id}`)
 }
