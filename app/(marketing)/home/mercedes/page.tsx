@@ -1,18 +1,19 @@
-import Mercedes from "@/app/(marketing)/components/sections/showroom/Mercedes"
 import MercedesDetail from "@/app/(marketing)/components/sections/showroom/MercedesDetail"
-import MercedesMobileSlider from "@/app/(marketing)/components/sections/showroom/MercedesMobileSlider";
+import CarGallery from "@/app/(marketing)/components/sections/showroom/CarGallery";
+import { cars } from "../../data/cars";
+import CarDetail from "../../components/sections/showroom/CarDetail";
 
 
-const images = Array.from({length: 15}, (_, i) =>
-`/assets/putar/${String(i + 1).padStart(2, "0")}.png`
-)
 
 export default function Page() {
+    const car = cars.mercedes;
     return (
         <>
-        <Mercedes images={images} />
-        <MercedesMobileSlider />
-        <MercedesDetail />
+        {/* <Mercedes images={images} />
+        <MercedesMobileSlider /> */}
+        <CarGallery images={car.images} alt={car.name} />
+        {/* <MercedesDetail /> */}
+        {/* <CarDetail /> */}
         </>
     );
 }

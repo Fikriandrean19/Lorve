@@ -9,12 +9,25 @@ import { HiOutlineMenu, HiX } from "react-icons/hi"
 import Image from "next/image"
 import { AppStoreBadge } from "../icons/AppstoreBadges"
 import { GooglePlayBadge } from "../icons/GooglePlayBadges"
+import {cars} from "@/app/(marketing)/data/cars"
 
-const menu = [
+// const menu = [
+//   { label: "Home", href: "/" },
+//   { label: "Mercedes-Benz", href: "/home/mercedes" },
+//   { label: "Toyota", href: "/home/Toyota" },
+// ]
+
+const staticMenu = [
   { label: "Home", href: "/" },
-  { label: "Mercedes-Benz", href: "/home/mercedes" },
-  { label: "Toyota", href: "/home/Toyota" },
 ]
+
+const carMenu = Object.values(cars).map((car) => ({
+  label: car.brand,
+  href: `/home/${car.slug}`,
+}))
+
+const menu = [...staticMenu, ...carMenu]
+
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false)
